@@ -10,13 +10,18 @@
 
         /**
          * wordpress : tinymce
-         * @param media : boolean ( true or false ) 
-         * @param quicktags : string ( 'link,strong,code,del,fullscreen,em,li,img,ol,block,ins,more,ul,spell,close' )
+         * @param media : boolean (true or false) 
+         * @param quicktags : string ('link,strong,code,del,fullscreen,em,li,img,ol,block,ins,more,ul,spell,close')
+         * @param rows : integer (10)
         **/
 
-        public static function settings ( $media=true, $quicktags=null ) 
+        public static function settings ( $media=true, $quicktags=null, $rows=10 ) 
         {
-            return array( 'media_buttons' => $media, 'quicktags' => array( 'buttons' => $quicktags ) );
+            return array( 'media_buttons' => $media, 'quicktags' => array( 'buttons' => $quicktags ), 'textarea_rows' => static::rows( $rows ) );
+        }
+
+        public static function rows ( $rows=10 ) {
+           return $rows;
         }
 
         /**
@@ -25,13 +30,13 @@
          * @param string (required) : editor_id
         **/
 
-        public static function textarea ( $content=null, $editor_id=null, $media=true, $quicktags='link,strong,code,del,fullscreen,em,li,img,ol,block,ins,more,ul,spell,close' ) 
+        public static function textarea ( $content=null, $editor_id=null, $media=true, $quicktags='link,strong,code,del,fullscreen,em,li,img,ol,block,ins,more,ul,spell,close', $rows=10 ) 
         {
             // Turn on the output buffer
             ob_start();
 
             // Echo the editor to the buffer
-            wp_editor( $content, $editor_id, static::settings( $media, $quicktags ) );
+            wp_editor( $content, $editor_id, static::settings( $media, $quicktags, $rows ) );
 
             // Store the contents of the buffer in a variable
             $editor_contents = ob_get_clean();
