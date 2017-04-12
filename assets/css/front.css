@@ -1,0 +1,9 @@
+
+body .wp-editor-wrap.html-active {
+    border: 1px solid #dedede;
+    padding: 5px;
+}
+body #wp-tinymcex_id-wrap.wp-editor-wrap.html-active {
+    border: 1px solid #dedede;
+    padding: 5px;
+}

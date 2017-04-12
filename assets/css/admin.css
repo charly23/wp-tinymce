@@ -1,0 +1,12 @@
+
+body.toplevel_page_wp-tinymce {
+    background: aliceblue;
+}
+body.toplevel_page_wp-tinymce #wpbody-content .wp-editor-wrap {
+    width: 60%;
+    margin: 20px 0 0 0;
+}
+body.toplevel_page_wp-tinymce #wpbody-content code {
+    display: inline-block;
+    margin-top: 20px;
+}
