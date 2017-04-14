@@ -1,6 +1,6 @@
-<?php if( ! class_exists( 'loader' ) or wp_die ( 'error found.' ) ) :
+<?php if( ! class_exists( 'wp_tinymce_loader' ) or wp_die ( 'error found.' ) ) :
 
-    class loader extends wp_tinymce
+    class wp_tinymce_loader extends wp_tinymce
     {
 
         public static $plugin_name = 'wp_tinymce';
@@ -56,7 +56,7 @@
         // END
     }
 
-    new loader(  true );
+    new wp_tinymce_loader(  true );
 
 endif;
 ?>
