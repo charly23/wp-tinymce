@@ -13,9 +13,10 @@ define( 'WP_Tinymce_Includes', 'includes' );
 define( 'WP_Tinymce_Config', 'config' );
 
 // wp tinymce : define directory url
-define( 'WP_Tinymce_URL', plugins_url( '/wp-tinymce' ) );
-define( 'WP_Tinymce_Config_URL', WP_Tinymce . '/wp-tinymce/config' );
-define( 'WP_Tinymce_Includes_URL', WP_Tinymce . '/wp-tinymce/includes' );
+
+define( 'WP_Tinymce_URL', plugins_url( 'wp-tinymce', dirname( __FILE__ ) )  );
+define( 'WP_Tinymce_Config_URL', WP_Tinymce_URL . '/wp-tinymce/config' );
+define( 'WP_Tinymce_Includes_URL', WP_Tinymce_URL . '/wp-tinymce/includes' );
 
 // includes : tinymce library
 require_once ( WP_Tinymce_Includes . '/tinymce.php' );
